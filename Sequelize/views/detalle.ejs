@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detalle</title>
+    <link rel="stylesheet" href="/css/genereales.css">
+</head>
+<body>
+    <%-include('./partials/headerMovies.ejs') %>
+    <div class="contenedor-body">
+        
+           <H2> <%= resultado.title %> </H2>
+            
+           <ul> Duracion: <%= resultado.length %> minutos </ul>
+           <ul>Premios: <%= resultado.awards %> </ul>
+           <ul>Fecha de estreno: <%= resultado.releaseDate%> </ul>
+           <ul>Rating: <%= resultado.rating %> </ul>
+        </div>
+</body>
+</html>

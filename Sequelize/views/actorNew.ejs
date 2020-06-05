@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movies</title>
+    <link rel="stylesheet" href="/css/genereales.css">
+</head>
+<body>
+    <%-include('./partials/headerActors.ejs') %>
+    <div class="contenedor-body">
+    <h1> Nuevos de actores </h1>
+    <ul>
+        <% resultado.forEach(e => { %>
+            <li>
+                <a href="/actors/details/<%= e.id %>"><%=e.firstName %> <%=e.lastName %> </a>
+            </li> 
+        <% }) %>
+    </ul>
+</div>
+</body>
+</html>

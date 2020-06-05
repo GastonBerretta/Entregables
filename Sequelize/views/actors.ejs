@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actors</title>
+    <link rel="stylesheet" href="/css/genereales.css">
+</head>
+<body>
+    <%-include('./partials/headerActors.ejs') %>
+    <div class="contenedor-body">
+    <h1> Listado de actores </h1>
+    <form action="/actors/search" method="post" >
+        <input type="text" placeholder="Buscador de actores" name="buscado">  
+        <select name="ordenar">
+            <option value="rating">Raiting</option>
+        </select>
+  
+    </form>
+    <ul>
+        
+        <% actorsAll.forEach(actor => { %>
+            <li>
+                <a href="/actors/details/<%= actor.id %>"><%= actor.firstName%>  <%=actor.lastName %>   </a>
+            </li> 
+        <% }) %>
+    </ul>
+</div>
+</body>
+</html>

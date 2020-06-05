@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador</title>
+    <link rel="stylesheet" href="/css/genereales.css">
+</head>
+<body>
+    
+    <%-include('./partials/headerMovies.ejs') %>
+    <div class="contenedor-body">
+    <h1> Listado de peliculas segun su busqueda </h1>
+    <ul>
+        <% buscado.forEach(movie => { %>
+            <li>
+                <a href="/movies/details/<%= movie.id %>"><%= movie.title %> </a><%= movie.length %> minutos 
+                        Premios: <%= movie.awards %> Rating: <%= movie.rating %> 
+                
+            </li> 
+        <% }) %>
+    </ul>
+</div>
+</body>
+</html>

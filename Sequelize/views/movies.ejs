@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movies</title>
+    <link rel="stylesheet" href="/css/genereales.css">
+    <link rel="stylesheet" href="/css/genereales.css">
+</head>
+<body>
+    <%-include('./partials/headerMovies.ejs') %>
+    <div class="contenedor-body">
+    <h1> Listado de peliculas </h1>
+    <form action="/movies/search" method="post" >
+        <input type="text" placeholder="Buscador de peliculas" name="buscado">  
+        <select name="ordenar">
+            <option value="length">Duracion</option>
+            <option value="awards">Premios</option>
+            <option value="rating">Raiting</option>
+        </select>
+  
+    </form>
+    <ul>
+        
+        <% moviesAll.forEach(movie => { %>
+            <li>
+                <a href="/movies/details/<%= movie.id %>"><%= movie.title %>  </a>
+            </li> 
+        <% }) %>
+    </ul>
+</div>
+</body>
+</html>
